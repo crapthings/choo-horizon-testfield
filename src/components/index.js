@@ -1,3 +1,6 @@
 exports.layout = require('./layout')
-exports.home = require('./home')
+
+exports.posts = require('./posts')
 exports.about = require('./about')
+
+exports.home = require('./home')

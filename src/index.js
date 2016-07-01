@@ -1,49 +1,20 @@
-window.faker = require('faker')
-
 const choo = require('choo')
 
-const html = choo.view
+// global
 
-const components = require('./components')
+window._ = require('lodash')
 
-const app = choo()
+window.moment = require('moment')
 
-const horizon = Horizon()
+window.faker = require('faker')
 
-window.Posts = horizon('posts')
+window.horizon = Horizon()
 
-app.model({
-  state: {
-    posts: []
-  },
-  subscriptions: [
-    send => {
-      Posts.watch().subscribe(resp => {
-        console.log(resp)
-        send('fetch', { posts: resp })
-      })
-    }
-  ],
-  reducers: {
-    fetch (action, state) {
-      return { posts: action.posts }
-    },
+window.html = choo.view
 
-    // create (action, state) {
-    //   state.posts.push({ title: faker.lorem.sentence() })
-    // }
-  },
-  effects: {
-    create (action, state) {
-      Posts.store({ title: faker.lorem.sentence() })
-    },
+window.app = choo()
 
-    remove (action, state) {
-      console.log(state)
-      Posts.removeAll(state.posts)
-    }
-  }
-})
+window.components = require('./components')
 
 app.router(route => [
   route('/', layout(components.home)),

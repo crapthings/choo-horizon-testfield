@@ -1,25 +1,8 @@
-const html = require('choo').view
-
 module.exports = function (params, state, send) {
   return html`
-    <div>
-    	<div>
-    		<button onclick=${create}>add new post</button>
-    		<button onclick=${remove}>remove all</button>
-    	</div>
-    	${state.posts.map(post => {
-    		return html`
-    			<p>${post.title}</p>
-    		`
-    	})}
+  	<div>
+  		<h1>你有${state.posts.length}篇文章</h1>
+	    ${components.posts(params, state, send)}
     </div>
   `
-
-  function create(e) {
-  	send('create')
-  }
-
-  function remove(e) {
-  	send('remove')
-  }
 }
