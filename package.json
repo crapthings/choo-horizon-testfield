@@ -1,0 +1,31 @@
+{
+  "name": "choo-horizon-testfield",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-runtime": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.9.1",
+    "babel-runtime": "^6.9.2",
+    "choo": "^2.3.1",
+    "form2js": "^1.0.0",
+    "jquery": "^3.0.0",
+    "lodash": "^4.13.1",
+    "mobx": "^2.3.3",
+    "moment": "^2.13.0",
+    "page": "^1.7.1"
+  }
+}
