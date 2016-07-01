@@ -1,7 +1,25 @@
 const html = require('choo').view
 
-module.exports = function () {
+module.exports = function (params, state, send) {
   return html`
-    <h1>home page</h1>
+    <div>
+    	<div>
+    		<button onclick=${create}>add new post</button>
+    		<button onclick=${remove}>remove all</button>
+    	</div>
+    	${state.posts.map(post => {
+    		return html`
+    			<p>${post.title}</p>
+    		`
+    	})}
+    </div>
   `
+
+  function create(e) {
+  	send('create')
+  }
+
+  function remove(e) {
+  	send('remove')
+  }
 }
